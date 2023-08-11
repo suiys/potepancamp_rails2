@@ -11,6 +11,31 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar Navbar">
+        <div class="container-fluid">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.png", {class: "header-logo", alt: "サイトロゴ"} %>
+          <% end %>
+          <ul class="navbar-nav flex-row ">
+            <li class="nav-item">
+              <%= link_to "ログイン", "users/sign_in", class: "btn fw-semibold login-btn" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "新規登録", "users/sign_up", class: "btn fw-semibold signup-btn" %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
+    <footer class="d-flex align-items-center">
+      <div class="container-fluid">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png", {class: "footer-logo", alt: "サイトロゴ"} %>
+        <% end %>
+        <p class="copyright">Copyright &copy; Potepan Share 2023</p>
+      </div>
+    </footer>
   </body>
 </html>

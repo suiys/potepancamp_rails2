@@ -1,0 +1,67 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: #222222;
+  background-color: #fff;
+  font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.Navbar {
+  background-color: #000066;
+  height: 80px;
+}
+
+.container-fluid {
+  padding: 0 40px;
+  max-width: 1680px;
+}
+
+.header-logo {
+  width: 240px;
+}
+
+.navbar-nav {
+  gap: 18px;
+}
+
+.btn {
+  color: #fff;
+}
+
+.login-btn {
+  border: 1px solid #fff;
+}
+
+.signup-btn {
+  background-color: #ea5506;
+}
+
+footer {
+  background-color: #000066;
+  height: 180px;
+}
+
+.footer-logo {
+  width: 240px;
+  margin-bottom: 8px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 12px;
+}
