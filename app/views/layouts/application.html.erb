@@ -17,17 +17,52 @@
           <%= link_to root_path do %>
             <%= image_tag "logo.png", {class: "header-logo", alt: "サイトロゴ"} %>
           <% end %>
-          <ul class="navbar-nav flex-row ">
-            <li class="nav-item">
-              <%= link_to "ログイン", "users/sign_in", class: "btn fw-semibold login-btn" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "新規登録", "users/sign_up", class: "btn fw-semibold signup-btn" %>
-            </li>
-          </ul>
+          <% if user_signed_in? %>
+            <div class="dropdown">
+              <div class="d-flex user-menu">
+                <%= image_tag "default_icon_image.png", {class: "user-icon", alt: "ユーザーアイコン"} %>
+                <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" area-expanded="false"><%= current_user.name %></button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                  <li>
+                    <%= link_to "ルームの新規登録", "rooms/new", class: "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to "予約済みルーム一覧", "reservations", class: "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to "登録済みルーム一覧", "rooms/own", class: "dropdown-item" %>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <%= link_to "アカウント設定", "users/account", class: "dropdown-item" %>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          <% else %>
+            <ul class="navbar-nav flex-row ">
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "btn fw-semibold login-btn" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "btn fw-semibold signup-btn" %>
+              </li>
+            </ul>
+          <% end %>
         </div>
       </nav>
     </header>
+    <% if notice %>
+      <div class="flash-message">
+        <p class="notice">
+          <%= notice %>
+        </p>
+      </div>
+    <% end %>
     <%= yield %>
     <footer class="d-flex align-items-center">
       <div class="container-fluid">

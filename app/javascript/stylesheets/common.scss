@@ -35,6 +35,19 @@ a {
   width: 240px;
 }
 
+.user-menu {
+  gap: 10px;
+}
+
+.user-icon {
+  width: 40px;
+}
+
+.user-menu li {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
 .navbar-nav {
   gap: 18px;
 }
@@ -49,6 +62,22 @@ a {
 
 .signup-btn {
   background-color: #ea5506;
+}
+
+.flash-message {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 40px;
+  background-color: #333;
+  border-radius: 3px;
+  color: azure;
+  box-shadow: 2px 3px 2px rgba(192, 198, 201, 0.3);
+}
+
+.flash-message > p {
+  padding: 10px;
+  margin: auto;
 }
 
 footer {
