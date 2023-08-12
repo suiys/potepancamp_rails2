@@ -25,8 +25,16 @@ label, input {
   font-size: 14px;
 }
 
+h2 {
+  margin-bottom: 1.5rem;
+}
+
 label {
   font-weight: 600;
+}
+
+i {
+  vertical-align: middle;
 }
 
 .Navbar {
@@ -143,4 +151,62 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.settings-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.sidebar-menu {
+  border: 1px solid #c0c6c9;
+  width: 240px;
+  height: fit-content;
+  margin-right: 1.5rem;
+}
+
+.nav-item {
+  padding: 20px;
+}
+
+.nav-item:first-of-type {
+  border-bottom: 1px solid #c0c6c9;
+}
+
+.sidebar-menu-item {
+  color: #222222;
+}
+
+.selected {
+  color: #ec6d71;
+}
+
+.settings-info {
+  width: 100%;
+}
+
+.settings-info-index {
+  border-bottom: 1px solid #c0c6c9;
+  padding: 0 0.25rem 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.fa-pen-to-square {
+  width: 20px;
+  color: #0e6dfd;
+}
+
+.settings-info-contents {
+  margin-bottom: 1rem;
+  padding: 8px 4px;
+}
+
+.settings-info-contents > label {
+  font-size: 16px;
+  width: 25%;
+}
+
+.settings-info-contents > p {
+  margin-bottom: 0;
+  width: 75%;
 }
