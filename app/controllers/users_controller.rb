@@ -17,4 +17,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def account
+    @user = User.find(current_user.id)
+  end
+
 end
