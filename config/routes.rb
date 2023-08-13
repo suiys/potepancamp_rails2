@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
   get 'users/profile'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -9,7 +10,10 @@ Rails.application.routes.draw do
   get 'users/profile', to: 'users#profile', as: 'profile'
   get 'users/profile/edit', to: 'users#edit', as: 'edit_profile'
   get 'users/account', to: 'users#account', as: 'account'
+
+  get 'rooms/own', to: 'rooms#index', as: 'rooms'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, only: :update
+  resources :rooms, except: :index
 end

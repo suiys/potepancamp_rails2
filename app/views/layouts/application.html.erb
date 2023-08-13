@@ -29,13 +29,13 @@
                 <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" area-expanded="false"><%= current_user.name %></button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                   <li>
-                    <%= link_to "ルームの新規登録", "rooms/new", class: "dropdown-item" %>
+                    <%= link_to "ルームの新規登録", new_room_path, class: "dropdown-item" %>
                   </li>
                   <li>
                     <%= link_to "予約済みルーム一覧", "reservations", class: "dropdown-item" %>
                   </li>
                   <li>
-                    <%= link_to "登録済みルーム一覧", "rooms/own", class: "dropdown-item" %>
+                    <%= link_to "登録済みルーム一覧", rooms_path, class: "dropdown-item" %>
                   </li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
