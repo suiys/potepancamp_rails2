@@ -37,6 +37,10 @@ i {
   vertical-align: middle;
 }
 
+textarea {
+  height: 128px;
+}
+
 .Navbar {
   background-color: #000066;
   height: 80px;
@@ -138,14 +142,15 @@ footer {
   font-size: 14px;
 }
 
-.registration-form-btn, .signin-form-btn {
+.registration-form-btn, .signin-form-btn, .confirm-btn {
+  background-color: #ea5506;
   width: 100%;
   height: 64px;
   border-radius: 10px;
   padding: 10px;
 }
 
-.switch-to-login, .switch-to-signup {
+.switch-to-login, .switch-to-signup, .cancel-btn {
   color: #333;
   border: solid 1px #333;
   display: flex;
@@ -210,3 +215,34 @@ footer {
   margin-bottom: 0;
   width: 75%;
 }
+
+#image > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin-right: 1.5rem;
+}
+
+#image > label {
+  border: 1px solid #c0c6c9;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 28px;
+  color: #333;
+  height: 32px;
+  width: 240px;
+}
+
+.image-upload-field {
+  display: none;
+}
+
+.settings-confirm-btn {
+  width: 100px;
+}
+
+.cancel-btn {
+  height: 64px;
+  border: 1px solid #c0c6c9;
+}
+
