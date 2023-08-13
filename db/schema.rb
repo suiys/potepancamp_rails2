@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_11_105746) do
+ActiveRecord::Schema.define(version: 2023_08_13_083139) do
 
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "image", default: "default_icon_image.png"
     t.text "introduction", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
