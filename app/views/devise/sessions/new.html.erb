@@ -1,5 +1,5 @@
-<div class="signin-form-wrapper">
-  <section class="container signin-form-container">
+<div class="form-wrapper">
+  <section class="container form-container">
     <h2 class="form-title">ログイン</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -14,11 +14,11 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "ログイン", class: "btn mb-3 signin-btn signin-form-btn" %>
+        <%= f.submit "ログイン", class: "btn mb-3 signin-btn form-btn" %>
       </div>
     <% end %>
 
-    <%= link_to "新しいアカウントを作成", new_registration_path(resource_name), class: "btn signin-form-btn switch-to-signup" %>
+    <%= link_to "新しいアカウントを作成", new_registration_path(resource_name), class: "btn form-btn cancel-btn" %>
   </section>
 </div>
 
