@@ -21,7 +21,11 @@
           <% if user_signed_in? %>
             <div class="dropdown">
               <div class="d-flex user-menu">
-                <%= image_tag "default_icon_image.png", {class: "user-icon", alt: "ユーザーアイコン"} %>
+                <% if current_user.image.attached? %>
+                  <%= image_tag current_user.image, {class: "user-icon", alt: "ユーザーアイコン"} %>
+                <% else %>
+                  <%= image_tag "default_icon_image.png", {class: "user-icon", alt: "ユーザーアイコン"} %>
+                <% end %>
                 <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" area-expanded="false"><%= current_user.name %></button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                   <li>
