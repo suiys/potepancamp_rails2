@@ -1,0 +1,47 @@
+<div class="form-wrapper">
+  <section class="container form-container">
+    <h2 class="form-title">新規登録</h2>
+
+    <%= form_with model: @room do |f| %>
+      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+        <%= f.label :name, "施設名", class: "required-column form-label" %>
+        <p>
+          <%= f.text_field :name, class: "form-control", placeholder: "ルーム名を入力" %>
+        </p>
+      </div>
+      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+        <%= f.label :introduction, "施設詳細", class: "required-column form-label" %>
+        <p>
+          <%= f.text_area :introduction, class: "form-control", placeholder: "施設詳細を入力" %>
+        </p>
+      </div>
+      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+        <%= f.label :room_charge, "料金", class: "required-column form-label" %>
+        <p>
+          <%= f.text_field :room_charge, class: "form-control", placeholder: "一日あたりの料金を入力" %>
+        </p>
+      </div>
+      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+        <%= f.label :address, "住所", class: "required-column form-label" %>
+        <p>
+          <%= f.text_field :address, class: "form-control", placeholder: "住所を入力" %>
+        </p>
+      </div>
+      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+        <%= f.label :image, "施設画像", class: "form-label" %>
+        <p id="image">
+          <label for="room_image">
+            <span>画像アップロード</span>
+            <%= f.file_field :image, class: "image-upload-field" %>
+          </label>
+        </p>
+      </div>
+      <div class="form-buttons">
+        <%= f.submit "保存", class: "btn confirm-btn mb-3"%>
+        <%= link_to :back do %>
+          <button class="btn form-btn cancel-btn">キャンセル</button>
+        <% end %>
+      </div>
+    <% end %>
+  </section>
+</div>
