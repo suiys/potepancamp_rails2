@@ -5,4 +5,6 @@ class Room < ApplicationRecord
     validates :room_charge
     validates :address
   end
+
+  has_one_attached :image
 end
