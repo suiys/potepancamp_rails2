@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.user_id = current_user.id
     if @room.save
-      redirect_to room_path, notice: "ルームを登録しました"
+      redirect_to room_path(@room), notice: "ルームを登録しました"
     else
       flash.now[:notice] = "ルームの新規登録に失敗しました"
       render "new"
