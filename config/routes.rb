@@ -11,9 +11,10 @@ Rails.application.routes.draw do
   get 'users/profile/edit', to: 'users#edit', as: 'edit_profile'
   get 'users/account', to: 'users#account', as: 'account'
 
-  get 'rooms/own', to: 'rooms#index', as: 'rooms'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :users, only: :update
-  resources :rooms, except: :index
+  resources :rooms do
+    get 'own', on: :collection
+  end
 end
