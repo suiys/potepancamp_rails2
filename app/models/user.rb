@@ -12,4 +12,7 @@ class User < ApplicationRecord
     validates :password
     validates :password_confirmation
   end
+
+  has_many :rooms, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 end
