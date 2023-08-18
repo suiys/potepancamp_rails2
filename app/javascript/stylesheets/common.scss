@@ -326,3 +326,16 @@ footer {
   color: #333333d9;
   padding: 24px 8px;
 }
+
+.reservation-form-container {
+  background-color: #fff;
+  padding: 24px 32px;
+}
+
+.reservation-form-contents {
+  width: 32%;
+}
+
+.reservation-form-contents > p {
+  margin-bottom: 0;
+}
