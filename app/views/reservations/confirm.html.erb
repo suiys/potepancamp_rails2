@@ -1,0 +1,33 @@
+<section class="container confirm-reservation-form">
+  <h2>予約内容の確認</h2>
+  <div class="d-flex align-items-center justify-content-between reservation-confirmation-contents">
+    <p>チェックイン</p>
+    <p><%= @reservation.check_in.strftime("%Y/%m/%d") %></p>
+  </div>
+  <div class="d-flex align-items-center justify-content-between reservation-confirmation-contents">
+    <p>チェックアウト</p>
+    <p><%= @reservation.check_out.strftime("%Y/%m/%d") %></p>
+  </div>
+  <div class="d-flex align-items-center justify-content-between reservation-confirmation-contents">
+    <p>宿泊日数</p>
+    <p><%= @stay_for %>日</p>
+  </div>
+  <div class="d-flex align-items-center justify-content-between reservation-confirmation-contents person">
+    <p>宿泊人数</p>
+    <p><%= @reservation.person %>人</p>
+  </div>
+  <div class="d-flex align-items-center justify-content-between reservation-confirmation-contents mt-3">
+    <p>お支払い金額</p>
+    <p class="total-charge">¥<%= @total_charge %></p>
+  </div>
+  <p class="text-center mt-4">上記内容でよろしければ「確定」ボタンを押下してください</p>
+  <%= form_with model: @reservation do |f| %>
+    <%= f.hidden_field :check_in %>
+    <%= f.hidden_field :check_out %>
+    <%= f.hidden_field :person %>
+    <%= f.hidden_field :room_id %>
+    <%= f.submit "予約を確定する", class: "btn confirm-btn mb-3" %>
+  <% end %>
+  <%= link_to "キャンセル", :back, class:"form-btn cancel-btn" %>
+
+</section>

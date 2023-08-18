@@ -274,7 +274,7 @@ footer {
   width: 65%;
 }
 
-.room-info-container {
+.room-info-container, .confirm-reservation-form {
   margin-top: 40px;
   margin-bottom: 100px;
 }
@@ -338,4 +338,17 @@ footer {
 
 .reservation-form-contents > p {
   margin-bottom: 0;
+}
+
+.confirm-reservation-form {
+  max-width: 980px;
+}
+
+.total-charge {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.person {
+  border-bottom: 1px solid #c0c6c9;
 }
