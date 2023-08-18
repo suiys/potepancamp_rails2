@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reservations/index'
   get 'rooms/index'
   get 'users/profile'
   devise_for :users, controllers: {
@@ -16,5 +17,10 @@ Rails.application.routes.draw do
   resources :users, only: :update
   resources :rooms do
     get 'own', on: :collection
+  end
+  resources :reservations do
+    collection do
+      post 'confirm'
+    end
   end
 end
