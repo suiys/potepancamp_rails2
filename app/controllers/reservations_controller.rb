@@ -7,7 +7,14 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    
+    @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
+    if @reservation.save
+      redirect_to reservations_path, notice: "予約を確定しました"
+    else
+      flash.now[:notice] = "予約の確定ができませんでした"
+      render "rooms/show"
+    end
   end
 
   def show
