@@ -307,3 +307,22 @@ footer {
 .room-address {
   font-size: 14px;
 }
+
+.own-rooms-list > thead {
+  border-bottom: #333;
+}
+
+.own-rooms-list td {
+  white-space: nowrap;
+}
+
+.own-rooms-list-image {
+  width: 128px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.no-rooms-caption {
+  color: #333333d9;
+  padding: 24px 8px;
+}

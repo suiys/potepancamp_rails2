@@ -1,0 +1,53 @@
+<section class="container room-info-container">
+  <h2>登録済みルーム一覧</h2>
+  <% if @rooms %>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle own-rooms-list">
+        <thead>
+          <tr>
+            <th>画像</th>
+            <th>ルーム名</th>
+            <th>紹介文</th>
+            <th>料金/日</th>
+            <th>登録日</th>
+            <th></th>
+          </tr>
+        </thead>
+        <% @rooms.each do |room| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to room_path(room) do %>
+                  <% if room.image.attached? %>
+                    <%= image_tag room.image, class: "own-rooms-list-image" %>
+                  <% else %>
+                    <%= image_tag "default_room_image.png", class: "own-rooms-list-image" %>
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to room_path(room) do %>
+                  <%= room.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= room.introduction %>
+              </td>
+              <td>
+                ¥<%= room.room_charge %>~
+              </td>
+              <td>
+                <%= room.created_at.to_s(:datetime_jp) %>
+              </td>
+              <td>
+                <%# ここにドロップダウンメニューとモーダル %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  <% else %>
+    <p class="no-rooms-caption">まだ登録したルームはありません</p>
+  <% end %>
+</section>
