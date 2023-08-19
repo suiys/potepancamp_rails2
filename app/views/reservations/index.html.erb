@@ -1,2 +1,61 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<section class="container reservation-info-container">
+  <h2>予約済みルーム一覧</h2>
+  <% if @reservations %>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle reserved-rooms-list">
+        <thead>
+          <tr>
+            <th>画像</th>
+            <th>ルーム名</th>
+            <th>紹介文</th>
+            <th>お支払い金額</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
+            <th>予約確定日時</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reservations.zip(@total_charges) do |reservation, total_charge| %>
+            <tr>
+              <td>
+                <%= link_to room_path(reservation.room) do %>
+                  <% if reservation.room.image.attached? %>
+                    <%= image_tag reservation.room.image, class: "own-rooms-list-image" %>
+                  <% else %>
+                    <%= image_tag "default_room_image.png", class: "own-rooms-list-image" %>
+                  <% end %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to room_path(reservation.room) do %>
+                  <%= reservation.room.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= reservation.room.introduction %>
+              </td>
+              <td>
+                ¥<%= total_charge %>
+              </td>
+              <td>
+                <%= reservation.check_in %>
+              </td>
+              <td>
+                <%= reservation.check_out %>
+              </td>
+              <td>
+                <%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %>
+              </td>
+              <td>
+                <%# ここにドロップダウンメニューとモーダル %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <p class="no-rooms-caption">まだ予約したルームはありません</p>
+  <% end %>
+</section>

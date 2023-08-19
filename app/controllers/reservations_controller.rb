@@ -1,5 +1,11 @@
 class ReservationsController < ApplicationController
   def index
+    @reservations = Reservation.where(user_id: current_user.id)
+    @total_charges = []
+    @reservations.each do |reservation|
+      total_charge = calc_total_room_charge(reservation)
+      @total_charges << total_charge
+    end
   end
 
   def new
@@ -45,5 +51,14 @@ class ReservationsController < ApplicationController
 
   def reservation_params
     params.require(:reservation).permit(:check_in, :check_out, :person, :room_id)
+  end
+
+  def stay_days(obj)
+    (obj.check_out - obj.check_in).to_i
+  end
+
+  def calc_total_room_charge(obj)
+    stay_for = stay_days(obj)
+    obj.room.room_charge * stay_for * obj.person
   end
 end
