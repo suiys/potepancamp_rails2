@@ -20,11 +20,7 @@
             <tr>
               <td>
                 <%= link_to room_path(reservation.room) do %>
-                  <% if reservation.room.image.attached? %>
-                    <%= image_tag reservation.room.image, class: "own-rooms-list-image" %>
-                  <% else %>
-                    <%= image_tag "default_room_image.png", class: "own-rooms-list-image" %>
-                  <% end %>
+                  <%= render  "shared/room_image", obj: reservation.room %>
                 <% end %>
               </td>
               <td>
