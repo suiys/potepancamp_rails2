@@ -13,11 +13,7 @@
       <div class="settings-info-contents d-flex align-items-center">
         <label for="image">アイコン画像</label>
         <p id="image">
-          <% if @user.image.attached? %>
-            <%= image_tag @user.image %>
-          <% else %>
-            <%= image_tag "default_icon_image.png" %>
-          <% end %>
+          <%= render  "shared/user_image", obj: @user %>
         </p>
       </div>
       <div class="settings-info-contents d-flex align-items-center">

@@ -10,11 +10,7 @@
         <div class="settings-info-contents d-flex align-items-center">
           <%= f.label :image, "アイコン画像" %>
           <p id="image">
-            <% if @user.image.attached? %>
-              <%= image_tag @user.image %>
-            <% else %>
-              <%= image_tag "default_icon_image.png" %>
-            <% end %>
+            <%= render  "shared/user_image", obj: @user %>
             <label for="user_image">
               <span>アップロードする画像を選択</span>
               <%= f.file_field :image, class: "image-upload-field" %>
