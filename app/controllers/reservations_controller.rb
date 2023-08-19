@@ -41,8 +41,8 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = Reservation.new(reservation_params)
-    @stay_for = (@reservation.check_out - @reservation.check_in).to_i
-    @total_charge = @reservation.room.room_charge * @stay_for * @reservation.person
+    @stay_for = stay_days(@reservation)
+    @total_charge = calc_total_room_charge(@reservation)
     if @reservation.invalid?
       flash.now[:notice] = "予約情報に不備があります"
       render "rooms/show"
