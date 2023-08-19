@@ -360,3 +360,75 @@ footer {
 .reserved-rooms-list td {
   white-space: nowrap;
 }
+
+.firstview {
+  background-image: url(../../assets/images/firstview.jpg);
+  height: 720px;
+  background-size: cover;
+  background-position: center;
+}
+
+.firstview_index {
+  color: #ffffffbe;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.firstview-search-form {
+  background-color: #ffffff9c;
+  padding: 2rem;
+  width: 640px;
+  margin: auto;
+}
+
+.firstview-search-input {
+  height: 64px;
+}
+
+.search-rooms-result-container {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.search-rooms-result-count > span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.search-result-room {
+  width: 32%;
+  background-color: #fbd8b586;
+  padding: 1rem 0.5rem;
+}
+
+.search-result-room > img {
+  width: 100%;
+  height: auto;
+}
+
+.rooms-info {
+  padding: 24px;
+}
+
+.rooms-info > p:first-of-type {
+  font-size: 22px;
+}
+
+.rooms-info > p:nth-of-type(2) {
+  font-size: 14px;
+}
+
+.rooms-details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-align: justify;
+}
+
+.rooms-info > .room-charge {
+  font-size: 24px;
+}

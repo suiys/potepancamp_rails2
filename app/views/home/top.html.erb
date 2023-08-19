@@ -1,2 +1,23 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class="d-flex align-items-center firstview ">
+  <section class="container">
+    <h1 class="text-center firstview_index mb-5">
+      Potepan Shareで<br>
+      まだ体験したことのない<br>
+      旅をしよう
+    </h1>
+    <div class="firstview-search-form">
+      <%= form_with url: rooms_path, method: :get, class: "d-flex flex-column" do |f| %>
+        <%= f.text_field :area, placeholder: "エリアで探す", class: "form-control mb-4 firstview-search-input" %>
+        <%= f.submit "検索", class: "btn confirm-btn" %>
+      <% end %>
+    </div>
+  </section>
+</div>
+<div>
+  <section class="container">
+    <h2>おすすめエリア</h2>
+    <div>
+    
+    </div>
+  </section>
+</div>

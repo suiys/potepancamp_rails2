@@ -1,0 +1,5 @@
+<% if obj.image.attached? %>
+  <%= image_tag obj.image, class: "own-rooms-list-image" %>
+<% else %>
+  <%= image_tag "default_room_image.png", class: "own-rooms-list-image" %>
+<% end %>

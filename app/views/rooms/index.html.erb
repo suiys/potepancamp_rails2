@@ -1,2 +1,20 @@
-<h1>Rooms#index</h1>
-<p>Find me in app/views/rooms/index.html.erb</p>
+<div class="container search-rooms-result-container">
+  <p class="mb-4 search-rooms-result-count">
+    <span><%= @rooms.count %></span>
+    件が見つかりました
+  </p>
+  <div class="d-flex flex-wrap justify-content-between">
+    <% @rooms.each do |room| %>
+      <div class=" mt-3 search-result-room">
+        <%= render  "shared/room_image", obj: room %>
+        <div class="rooms-info">
+          <p class="mb-1"><%= room.name %></p>
+          <p class="mb-4"><%= room.address %></p>
+          <p class="rooms-details"><%= room.introduction %></p>
+          <p class="text-end room-charge">¥<%= room.room_charge %>~</p>
+          <%= link_to "詳細はこちら", room_path(room), class: "btn confirm-btn d-flex align-items-center justify-content-center" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
