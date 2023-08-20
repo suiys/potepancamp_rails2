@@ -9,7 +9,7 @@
   </div>
   <div class="room-info d-flex justify-content-between">
     <% if @room.image.attached? %>
-      <%= image_tag @room.image, class: "room-image" %>
+      <%= image_tag @room.image.variant(resize: "400", gravity: "center", crop: "400x300+0+0").processed, class: "room-image" %>
     <% else %>
       <%= image_tag "default_room_image.png", class: "room-image" %>
     <% end %>

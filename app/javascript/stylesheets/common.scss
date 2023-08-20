@@ -281,7 +281,8 @@ footer {
 
 .room-image {
   width: 40%;
-  object-fit: cover;
+  object-fit: contain;
+  height: fit-content;
 }
 
 .room-info-contents {
@@ -318,7 +319,7 @@ footer {
 
 .own-rooms-list-image {
   width: 128px;
-  height: 64px;
+  height: 72px;
   object-fit: cover;
 }
 
