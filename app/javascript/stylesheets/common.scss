@@ -366,6 +366,7 @@ footer {
   height: 720px;
   background-size: cover;
   background-position: center;
+  margin-bottom: 80px;
 }
 
 .firstview_index {
@@ -465,5 +466,56 @@ footer {
   width: 100px;
   height: 48px;
   border-radius: 10px;
-  // padding: 10px;
+}
+
+.recommend-area-container {
+  margin-bottom: 50px;
+}
+
+.recommend-areas {
+  gap: 1rem;
+}
+
+.recommend-area {
+  height: 320px;
+  width: 25%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+  border-radius: 12px;
+}
+
+.recommend-rooms-tokyo {
+  background-image: url(../../assets/images/tokyo.jpg);
+}
+
+.recommend-rooms-osaka {
+  background-image: url(../../assets/images/osaka.jpg);
+}
+
+.recommend-rooms-kyoto {
+  background-image: url(../../assets/images/kyoto.jpg);
+}
+
+.recommend-rooms-sapporo {
+  background-image: url(../../assets/images/sapporo.jpg);
+}
+
+.recommend-area-name {
+  color: #000066;
+  line-height: 1.5rem;
+}
+
+.recommend-area-name > p {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-areas {
+    flex-wrap: wrap;
+  }
+
+  .recommend-area {
+    width: 45%;
+  }
 }
