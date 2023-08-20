@@ -12,9 +12,7 @@ class Room < ApplicationRecord
   has_many :reservations, dependent: :destroy
 
   def self.multiple_search(area, keyword)
-    Room.where("address LIKE ?", "%#{area}%").or
-    (Room.where("name LIKE ?", "%#{keyword}%")).or
-    (Room.where("introduction LIKE ?", "%#{keyword}%"))
+    Room.where("address LIKE ?", "%#{area}%").or(Room.where("name LIKE ?", "%#{keyword}%")).or(Room.where("introduction LIKE ?", "%#{keyword}%"))
   end
 
   def self.search_area(area)
@@ -22,7 +20,6 @@ class Room < ApplicationRecord
   end
 
   def self.search_keyword(keyword)
-    Room.where("name LIKE ?", "%#{keyword}%").or
-    (Room.where("introduction LIKE ?", "%#{keyword}%"))
+    Room.where("name LIKE ?", "%#{keyword}%").or(Room.where("introduction LIKE ?", "%#{keyword}%"))
   end
 end

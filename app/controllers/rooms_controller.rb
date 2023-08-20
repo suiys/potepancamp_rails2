@@ -1,5 +1,12 @@
 class RoomsController < ApplicationController
   def index
+    if params[:area] == ""
+      params[:area] = nil
+    end
+    if params[:keyword] == ""
+      params[:keyword] = nil
+    end
+
     if params[:area] && params[:keyword]
       @rooms = Room.multiple_search(params[:area], params[:keyword])
     elsif params[:area]

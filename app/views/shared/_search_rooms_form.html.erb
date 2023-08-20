@@ -1,0 +1,13 @@
+<div class="d-flex align-items-center justify-content-center search-rooms-form">
+  <%= form_with url: rooms_path, method: :get, class: "d-flex gap-3" do |f| %>
+    <div class="d-flex align-items-center search-form-input">
+      <i class="fa-solid fa-location-dot"></i>
+      <%= f.text_field :area, placeholder: "エリアで探す", class: "form-control", value: nil %>
+    </div>
+    <div class="d-flex align-items-center search-form-input">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <%= f.text_field :keyword, placeholder: "キーワードで探す", class: "form-control", value: nil %>
+    </div>
+    <%= f.submit "検索", class: "btn search-btn" %>
+  <% end %>
+</div>

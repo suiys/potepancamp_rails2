@@ -1,7 +1,13 @@
+<%= render  "shared/search_rooms_form" %>
+
 <div class="container search-rooms-result-container">
   <p class="mb-4 search-rooms-result-count">
-    <span><%= @rooms.count %></span>
-    件が見つかりました
+    <% if @rooms.count == 0 %>
+      お探しの条件に合うルームが見つかりませんでした
+    <% else %>
+      <span><%= @rooms.count %></span>
+      件が見つかりました
+    <% end %>
   </p>
   <div class="d-flex flex-wrap justify-content-between">
     <% @rooms.each do |room| %>
