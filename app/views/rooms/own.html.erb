@@ -30,7 +30,7 @@
                 <%= room.introduction %>
               </td>
               <td>
-                ¥<%= room.room_charge %>~
+                ¥<%= room.room_charge.to_s(:delimited) %>~
               </td>
               <td>
                 <%= room.created_at.to_s(:datetime_jp) %>

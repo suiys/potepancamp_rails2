@@ -18,7 +18,7 @@
   </div>
   <div class="d-flex align-items-center justify-content-between reservation-confirmation-contents mt-3">
     <p>お支払い金額</p>
-    <p class="total-charge">¥<%= @total_charge %></p>
+    <p class="total-charge">¥<%= @total_charge.to_s(:delimited) %></p>
   </div>
   <p class="text-center mt-4">上記内容でよろしければ「確定」ボタンを押下してください</p>
   <%= form_with model: @reservation do |f| %>

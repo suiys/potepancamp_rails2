@@ -16,7 +16,7 @@
     <div class="room-info-contents ms-3">
       <div class="room-info-index d-flex justify-content-between mb-2">
         <p class="room-name"><%= @room.name %></p>
-        <p class="room-charge">¥<%= @room.room_charge %>~</p>
+        <p class="room-charge">¥<%= @room.room_charge.to_s(:delimited) %>~</p>
       </div>
       <p class="room-address mb-4"><%= @room.address %></p>
       <p class="mb-4"><%= @room.introduction %></p>

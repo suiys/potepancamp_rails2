@@ -32,7 +32,7 @@
                 <%= reservation.room.introduction %>
               </td>
               <td>
-                ¥<%= total_charge %>
+                ¥<%= total_charge.to_s(:delimited) %>
               </td>
               <td>
                 <%= reservation.check_in %>

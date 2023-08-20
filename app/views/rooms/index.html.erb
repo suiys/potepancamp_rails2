@@ -17,7 +17,7 @@
           <p class="mb-1"><%= room.name %></p>
           <p class="mb-4"><%= room.address %></p>
           <p class="rooms-details"><%= room.introduction %></p>
-          <p class="text-end room-charge">¥<%= room.room_charge %>~</p>
+          <p class="text-end room-charge">¥<%= room.room_charge.to_s(:delimited) %>~</p>
           <%= link_to "詳細はこちら", room_path(room), class: "btn confirm-btn d-flex align-items-center justify-content-center" %>
         </div>
       </div>
