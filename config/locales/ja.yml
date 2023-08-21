@@ -28,8 +28,19 @@ ja:
         name: ユーザー名
         image: アイコン画像
         introduction: 自己紹介
+      room:
+        name: 施設名
+        introduction: 施設詳細
+        room_charge: 料金
+        address: 住所
+      reservation:
+        check_in: チェックイン
+        check_out: チェックアウト
+        person: 人数
     models:
       user: ユーザー
+      room: ルーム
+      reservation: 予約
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
