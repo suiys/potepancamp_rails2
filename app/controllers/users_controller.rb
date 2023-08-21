@@ -8,10 +8,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @user = User.find(params[:id])
-    if @user.update(params.require(:user).permit(:image, :name, :introduction))
+    binding.pry
+    if @user.update(user_params)
+      binding.pry
       redirect_to profile_path, notice: "プロフィール情報を更新しました"
     else
+      binding.pry
       flash.now[:notice] = "プロフィール情報の更新に失敗しました"
       render "edit"
     end
@@ -19,6 +23,10 @@ class UsersController < ApplicationController
 
   def account
     @user = User.find(current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :introduction, :image)
   end
 
 end

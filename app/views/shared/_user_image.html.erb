@@ -1,5 +1,5 @@
 <% if obj.image.attached? %>
-  <%= image_tag obj.image %>
+  <%= image_tag obj.image.variant(resize: "100", gravity: "center", crop: "80x80+0+0").processed %>
 <% else %>
   <%= image_tag "default_icon_image.png" %>
 <% end %>
