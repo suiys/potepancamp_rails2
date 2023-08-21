@@ -28,18 +28,27 @@
               <p>
                 <%= f.date_field :check_in, class: "form-control" %>
               </p>
+              <% if @reservation.errors.include?(:check_in) %>
+                <p class="validation-error-message"><%= @reservation.errors.full_messages_for(:check_in).first %></p>
+              <% end %>
             </div>
             <div class="reservation-form-contents">
               <%= f.label :check_out, "チェックアウト", class: "form-label required-column" %>
               <p>
                 <%= f.date_field :check_out, class: "form-control" %>
               </p>
+              <% if @reservation.errors.include?(:check_out) %>
+                <p class="validation-error-message"><%= @reservation.errors.full_messages_for(:check_out).first %></p>
+              <% end %>
             </div>
             <div class="reservation-form-contents">
               <%= f.label :person, "人数", class: "form-label required-column" %>
               <p>
                 <%= f.text_field :person, class: "form-control", placeholder: "0" %>
               </p>
+              <% if @reservation.errors.include?(:person) %>
+                <p class="validation-error-message"><%= @reservation.errors.full_messages_for(:person).first %></p>
+              <% end %>
             </div>
             <%= f.hidden_field :room_id, value: @room.id %>
           </div>
