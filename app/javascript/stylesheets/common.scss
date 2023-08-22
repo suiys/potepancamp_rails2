@@ -294,9 +294,14 @@ footer {
   width: 30%;
 }
 
-.rooms-form-contents > p {
-  margin-bottom: 0;
+.rooms-form-input {
+  // margin-bottom: 0;
   width: 65%;
+}
+
+.rooms-form-input > p {
+  margin-bottom: 0;
+  // width: 65%;
 }
 
 .room-info-container, .confirm-reservation-form, .reservation-info-container {

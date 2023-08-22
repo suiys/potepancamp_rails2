@@ -3,33 +3,53 @@
     <h2 class="form-title">新規登録</h2>
 
     <%= form_with model: @room do |f| %>
-      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+      <div class="rooms-form-contents d-flex align-items-baseline justify-content-between">
         <%= f.label :name, "施設名", class: "required-column form-label" %>
-        <p>
-          <%= f.text_field :name, class: "form-control", placeholder: "ルーム名を入力" %>
-        </p>
+        <div class="rooms-form-input">
+          <p>
+            <%= f.text_field :name, class: "form-control", placeholder: "ルーム名を入力" %>
+          </p>
+          <% if @room.errors.include?(:name) %>
+            <p class="validation-error-message"><%= @room.errors.full_messages_for(:name).first %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+      <div class="rooms-form-contents d-flex align-items-baseline justify-content-between">
         <%= f.label :introduction, "施設詳細", class: "required-column form-label" %>
-        <p>
-          <%= f.text_area :introduction, class: "form-control", placeholder: "施設詳細を入力" %>
-        </p>
+        <div class="rooms-form-input">
+          <p>
+            <%= f.text_area :introduction, class: "form-control", placeholder: "施設詳細を入力" %>
+          </p>
+          <% if @room.errors.include?(:introduction) %>
+            <p class="validation-error-message"><%= @room.errors.full_messages_for(:introduction).first %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+      <div class="rooms-form-contents d-flex align-items-baseline justify-content-between">
         <%= f.label :room_charge, "料金", class: "required-column form-label" %>
-        <p>
-          <%= f.text_field :room_charge, class: "form-control", placeholder: "一日あたりの料金を入力" %>
-        </p>
+        <div class="rooms-form-input">
+          <p>
+            <%= f.text_field :room_charge, class: "form-control", placeholder: "一日あたりの料金を入力" %>
+          </p>
+          <% if @room.errors.include?(:room_charge) %>
+            <p class="validation-error-message"><%= @room.errors.full_messages_for(:room_charge).first %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+      <div class="rooms-form-contents d-flex align-items-baseline justify-content-between">
         <%= f.label :address, "住所", class: "required-column form-label" %>
-        <p>
-          <%= f.text_field :address, class: "form-control", placeholder: "住所を入力" %>
-        </p>
+        <div class="rooms-form-input">
+          <p>
+            <%= f.text_field :address, class: "form-control", placeholder: "住所を入力" %>
+          </p>
+          <% if @room.errors.include?(:address) %>
+            <p class="validation-error-message"><%= @room.errors.full_messages_for(:address).first %></p>
+          <% end %>
+        </div>
       </div>
-      <div class="rooms-form-contents d-flex align-items-center justify-content-between">
+      <div class="rooms-form-contents d-flex align-items-baseline justify-content-between">
         <%= f.label :image, "施設画像", class: "form-label" %>
-        <p id="image">
+        <p id="image" class="rooms-form-input">
           <label for="room_image">
             <span>画像アップロード</span>
             <%= f.file_field :image, class: "image-upload-field" %>
