@@ -10,10 +10,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def new
-    
-  end
-
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user = current_user
@@ -23,22 +19,6 @@ class ReservationsController < ApplicationController
       flash.now[:notice] = "予約の確定ができませんでした"
       render "rooms/show"
     end
-  end
-
-  def show
-    
-  end
-
-  def edit
-
-  end
-
-  def update
-    
-  end
-
-  def destroy
-    
   end
 
   def confirm

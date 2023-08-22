@@ -40,18 +40,6 @@ class RoomsController < ApplicationController
     @reservation = Reservation.new
   end
 
-  def edit
-    
-  end
-
-  def update
-    
-  end
-
-  def destroy
-    
-  end
-
   def own
     @user = current_user
   end
