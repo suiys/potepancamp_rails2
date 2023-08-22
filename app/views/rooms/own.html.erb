@@ -10,7 +10,6 @@
             <th>紹介文</th>
             <th>料金/日</th>
             <th>登録日</th>
-            <th></th>
           </tr>
         </thead>
         <% @user.rooms.each do |room| %>
@@ -34,9 +33,6 @@
               </td>
               <td>
                 <%= room.created_at.to_s(:datetime_jp) %>
-              </td>
-              <td>
-                <%# ここにドロップダウンメニューとモーダル %>
               </td>
             </tr>
           </tbody>

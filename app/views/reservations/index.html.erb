@@ -12,7 +12,6 @@
             <th>チェックイン</th>
             <th>チェックアウト</th>
             <th>予約確定日時</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -42,9 +41,6 @@
               </td>
               <td>
                 <%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %>
-              </td>
-              <td>
-                <%# ここにドロップダウンメニューとモーダル %>
               </td>
             </tr>
           <% end %>
