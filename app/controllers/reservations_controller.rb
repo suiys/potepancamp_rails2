@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @reservations = Reservation.where(user_id: current_user.id)
     @total_charges = []

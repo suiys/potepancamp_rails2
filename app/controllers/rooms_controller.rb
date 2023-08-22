@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :own]
+
   def index
     if params[:area] == ""
       params[:area] = nil
