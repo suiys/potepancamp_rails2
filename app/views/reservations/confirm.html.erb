@@ -28,6 +28,6 @@
     <%= f.hidden_field :room_id %>
     <%= f.submit "予約を確定する", class: "btn confirm-btn mb-3" %>
   <% end %>
-  <%= link_to "キャンセル", :back, class:"form-btn cancel-btn" %>
+  <%= link_to "キャンセル", room_path(@reservation.room), class:"form-btn cancel-btn" %>
 
 </section>
