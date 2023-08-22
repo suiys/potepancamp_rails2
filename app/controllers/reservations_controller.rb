@@ -43,11 +43,11 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
     @room = Room.find(params[:reservation][:room_id])
-
     if @reservation.invalid?
-      flash.now[:notice] = "予約情報に不備があります"
-      render "rooms/show"
+      flash[:notice] = "予約情報に不備があります"
+      redirect_to room_path(@room)
     else
       @stay_for = stay_days(@reservation)
       @total_charge = calc_total_room_charge(@reservation)
