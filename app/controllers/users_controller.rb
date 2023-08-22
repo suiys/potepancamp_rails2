@@ -8,17 +8,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     @user = User.find(params[:id])
-    binding.pry
-    if @user.update(user_params)
-      binding.pry
+    if @user.update!(user_params)
       redirect_to profile_path, notice: "プロフィール情報を更新しました"
-    else
-      binding.pry
-      flash.now[:notice] = "プロフィール情報の更新に失敗しました"
-      render "edit"
     end
+    rescue ActiveRecord::RecordInvalid => e
+      flash[:notice] = "プロフィール情報の更新に失敗しました"
+      redirect_to edit_profile_path
+      logger.error("プロフィールの更新に失敗しました。エラーメッセージ: #{e.record.errors.full_messages}")
   end
 
   def account
