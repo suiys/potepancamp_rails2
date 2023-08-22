@@ -26,7 +26,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.user_id = current_user.id
+    @room.user = current_user
     if @room.save
       redirect_to room_path(@room), notice: "ルームを登録しました"
     else
@@ -53,7 +53,7 @@ class RoomsController < ApplicationController
   end
 
   def own
-    @rooms = Room.where(user_id: current_user.id)
+    @user = current_user
   end
 
   def room_params

@@ -1,6 +1,6 @@
 <section class="container room-info-container">
   <h2>登録済みルーム一覧</h2>
-  <% if @rooms != [] %>
+  <% if @user.rooms != [] %>
     <div class="table-responsive">
       <table class="table table-hover align-middle own-rooms-list">
         <thead>
@@ -13,7 +13,7 @@
             <th></th>
           </tr>
         </thead>
-        <% @rooms.each do |room| %>
+        <% @user.rooms.each do |room| %>
           <tbody>
             <tr>
               <td>

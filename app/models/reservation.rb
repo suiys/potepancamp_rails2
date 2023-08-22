@@ -6,7 +6,7 @@ class Reservation < ApplicationRecord
   end
   validate :checkout_must_be_after_checkin
 
-  # belongs_to :user
+  belongs_to :user
   belongs_to :room
 
   def checkout_must_be_after_checkin

@@ -2,9 +2,9 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @reservations = Reservation.where(user_id: current_user.id)
+    @user = current_user
     @total_charges = []
-    @reservations.each do |reservation|
+    @user.reservations.each do |reservation|
       total_charge = calc_total_room_charge(reservation)
       @total_charges << total_charge
     end
@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = current_user.id
+    @reservation.user = current_user
     if @reservation.save
       redirect_to reservations_path, notice: "予約を確定しました"
     else
@@ -43,11 +43,11 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = current_user.id
-    @room = Room.find(params[:reservation][:room_id])
+    @reservation.user = current_user
+    @room = @reservation.room
     if @reservation.invalid?
-      flash[:notice] = "予約情報に不備があります"
-      redirect_to room_path(@room)
+      flash.now[:notice] = "予約情報に不備があります"
+      render "rooms/show"
     else
       @stay_for = stay_days(@reservation)
       @total_charge = calc_total_room_charge(@reservation)
