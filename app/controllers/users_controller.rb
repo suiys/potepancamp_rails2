@@ -15,8 +15,10 @@ class UsersController < ApplicationController
       redirect_to profile_path, notice: "プロフィール情報を更新しました"
     end
     rescue ActiveRecord::RecordInvalid => e
-      flash[:notice] = "プロフィール情報の更新に失敗しました"
-      redirect_to edit_profile_path
+      binding.pry
+      flash.now[:notice] = "プロフィール情報の更新に失敗しました"
+      @user.image.purge
+      render "edit"
       logger.error("プロフィールの更新に失敗しました。エラーメッセージ: #{e.record.errors.full_messages}")
   end
 

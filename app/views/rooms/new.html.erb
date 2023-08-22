@@ -49,12 +49,15 @@
       </div>
       <div class="rooms-form-contents d-flex align-items-baseline justify-content-between">
         <%= f.label :image, "施設画像", class: "form-label" %>
-        <p id="image" class="rooms-form-input">
+        <div class="rooms-form-input">
           <label for="room_image">
             <span>画像アップロード</span>
             <%= f.file_field :image, class: "image-upload-field" %>
           </label>
-        </p>
+          <% if @room.errors.include?(:image) %>
+            <p class="validation-error-message"><%= @room.errors.full_messages_for(:image).first %></p>
+          <% end %>
+        </div>
       </div>
       <div class="form-buttons">
         <%= f.submit "保存", class: "btn confirm-btn mb-3"%>

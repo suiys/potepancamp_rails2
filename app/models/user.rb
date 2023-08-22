@@ -24,6 +24,17 @@ class User < ApplicationRecord
     validates :password_confirmation, on: :create
   end
 
+  validate :is_file_type_valid?
+
+  def is_file_type_valid?
+    return unless image.attached?
+
+    valid_file_types = ["image/png", "image/jpg", "image/jpeg", "image/gif"]
+    unless valid_file_types.include?(image.blob.content_type)
+      errors.add(:image, "には拡張子が.png, .jpg, .jpeg, .gifのいずれかのファイルを添付してください")
+    end
+  end
+
   has_many :rooms, dependent: :destroy
   has_many :reservations, dependent: :destroy
 end

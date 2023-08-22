@@ -33,6 +33,7 @@ ja:
         introduction: 施設詳細
         room_charge: 料金
         address: 住所
+        image: 施設画像
       reservation:
         check_in: チェックイン
         check_out: チェックアウト

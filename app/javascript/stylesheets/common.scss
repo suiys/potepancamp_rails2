@@ -215,6 +215,7 @@ footer {
 .settings-info-contents {
   margin-bottom: 1rem;
   padding: 8px 4px;
+  width: 100%;
 }
 
 .settings-info-contents > label {
@@ -224,6 +225,11 @@ footer {
 
 .settings-info-contents > p {
   width: 100%;
+  margin-bottom: 0;
+}
+
+.edit-profile-image {
+  width: 25%;
 }
 
 .field_with_errors {
@@ -251,7 +257,11 @@ footer {
   margin-right: 1.5rem;
 }
 
-#image > label {
+#image > p {
+  width: 100%;
+}
+
+.rooms-form-input > label, .users-form-input > label {
   border: 1px solid #c0c6c9;
   border-radius: 4px;
   text-align: center;
@@ -259,6 +269,10 @@ footer {
   color: #333;
   height: 32px;
   width: 240px;
+}
+
+.edit-profile-image-caption {
+  margin-bottom: 0;
 }
 
 .image-upload-field {

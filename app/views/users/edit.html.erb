@@ -9,13 +9,18 @@
       <%= form_with model: @user do |f| %>
         <div class="settings-info-contents d-flex align-items-center">
           <%= f.label :image, "アイコン画像" %>
-          <p id="image">
-            <%= render  "shared/user_image", obj: @user %>
-            <label for="user_image">
-              <span>アップロードする画像を選択</span>
-              <%= f.file_field :image, class: "image-upload-field" %>
-            </label>
-          </p>
+          <div id="image" class="edit-profile-image d-flex align-items-center justify-content-between">
+            <%= render "shared/user_image", obj: @user %>
+            <div class="users-form-input d-flex flex-column align-items-center">
+              <label for="user_image">
+                <span>アップロードする画像を選択</span>
+                <%= f.file_field :image, class: "image-upload-field" %>
+              </label>
+              <% if @user.errors.include?(:image) %>
+                <p class="validation-error-message edit-profile-image-caption"><%= @user.errors.full_messages_for(:image).first %></p>
+              <% end %>
+            </div>
+          </div>
         </div>
         <div class="settings-info-contents d-flex align-items-center">
           <%= f.label :name, "ユーザー名" %>

@@ -8,6 +8,17 @@ class Room < ApplicationRecord
 
   has_one_attached :image
 
+  validate :is_file_type_valid?
+
+  def is_file_type_valid?
+    return unless image.attached?
+
+    valid_file_types = ["image/png", "image/jpg", "image/jpeg", "image/gif"]
+    unless valid_file_types.include?(image.blob.content_type)
+      errors.add(:image, "には拡張子が.png, .jpg, .jpeg, .gifのいずれかのファイルを添付してください")
+    end
+  end
+
   belongs_to :user
   has_many :reservations, dependent: :destroy
 
