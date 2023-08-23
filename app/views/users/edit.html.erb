@@ -1,0 +1,46 @@
+<section class="container settings-wrapper">
+  <h2>設定</h2>
+  <div class="settings-container d-flex">
+    <%= render "shared/settings_sidebar_for_profile" %>
+    <div class="settings-info">
+      <div class="settings-info-index d-flex justify-content-between align-items-center">
+        <h3>プロフィール</h3>
+      </div>
+      <%= form_with model: @user do |f| %>
+        <div class="settings-info-contents d-flex align-items-center">
+          <%= f.label :image, "アイコン画像" %>
+          <div id="image" class="edit-profile-image d-flex align-items-center justify-content-between">
+            <%= render "shared/user_image", obj: @user %>
+            <div class="users-form-input d-flex flex-column align-items-center">
+              <label for="user_image">
+                <span>アップロードする画像を選択</span>
+                <%= f.file_field :image, class: "image-upload-field" %>
+              </label>
+              <% if @user.errors.include?(:image) %>
+                <p class="validation-error-message edit-profile-image-caption"><%= @user.errors.full_messages_for(:image).first %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="settings-info-contents d-flex align-items-center">
+          <%= f.label :name, "ユーザー名" %>
+          <p>
+            <%= f.text_field :name, class: "form-control" %>
+          </p>
+        </div>
+        <div class="settings-info-contents d-flex align-items-center">
+          <%= f.label :introduction, "自己紹介" %>
+          <p>
+            <%= f.text_area :introduction, class: "form-control" %>
+          </p>
+        </div>
+        <div class="settings-info-contents form-buttons d-flex justify-content-end gap-3">
+          <%= link_to :back do %>
+            <button class="btn cancel-btn">キャンセル</button>
+          <% end %>
+          <%= f.submit "保存", class: "btn confirm-btn settings-confirm-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

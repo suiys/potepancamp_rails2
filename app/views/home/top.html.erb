@@ -1,0 +1,46 @@
+<div class="d-flex align-items-center firstview ">
+  <section class="container">
+    <h1 class="text-center firstview_index mb-5">
+      Potepan Shareで<br>
+      まだ体験したことのない<br>
+      旅をしよう
+    </h1>
+    <div class="firstview-search-form">
+      <%= form_with url: rooms_path, method: :get, class: "d-flex flex-column" do |f| %>
+        <%= f.text_field :area, placeholder: "エリアで探す", class: "form-control mb-4 firstview-search-input" %>
+        <%= f.submit "検索", class: "btn confirm-btn" %>
+      <% end %>
+    </div>
+  </section>
+</div>
+<div>
+  <section class="container recommend-area-container">
+    <h2>おすすめエリア</h2>
+    <div class="d-flex justify-content-between recommend-areas">
+      <%= link_to rooms_path(area: "東京"), class: "recommend-area recommend-rooms-tokyo" do %>
+        <div class="d-flex align-items-center justify-content-end gap-1 mt-3 me-3 recommend-area-name">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Tokyo</p>
+        </div>
+      <% end %>
+      <%= link_to rooms_path(area: "大阪"), class: "recommend-area recommend-rooms-osaka" do %>
+        <div class="d-flex align-items-center justify-content-end gap-1 mt-3 me-3 recommend-area-name">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Osaka</p>
+        </div>
+      <% end %>
+      <%= link_to rooms_path(area: "京都"), class: "recommend-area recommend-rooms-kyoto" do %>
+        <div class="d-flex align-items-center justify-content-end gap-1 mt-3 me-3 recommend-area-name">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Kyoto</p>
+        </div>
+      <% end %>
+      <%= link_to rooms_path(area: "札幌"), class: "recommend-area recommend-rooms-sapporo" do %>
+        <div class="d-flex align-items-center justify-content-end gap-1 mt-3 me-3 recommend-area-name">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Sapporo</p>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,75 @@
+<section class="container settings-wrapper">
+  <h2>設定</h2>
+  <div class="settings-container d-flex">
+    <%= render "shared/settings_sidebar_for_account" %>
+    <div class="settings-info">
+      <div class="settings-info-index d-flex justify-content-between align-items-center">
+        <h3>アカウント</h3>
+      </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+        <div class="settings-info-contents d-flex align-items-center">
+          <%= f.label :email, "メールアドレス" %>
+          <div class="settings-info-input">
+            <p>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </p>
+            <% if resource.errors.include?(:email) %>
+              <p class="validation-error-message"><%= resource.errors.full_messages_for(:email).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="settings-info-contents d-flex align-items-center">
+          <%= f.label :password do %>
+            <span>変更後パスワード</span><br>
+            <span class="label-description">*変更する場合のみ</span>
+          <% end %>
+          <div class="settings-info-input">
+            <p>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "変更後パスワードを入力" %>
+            </p>
+            <% if resource.errors.include?(:password) %>
+              <p class="validation-error-message"><%= resource.errors.full_messages_for(:password).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="settings-info-contents d-flex align-items-center">
+          <%= f.label :password_confirmation do %>
+            <span>確認用パスワード</span><br>
+            <span class="label-description">*変更する場合のみ</span>
+          <% end %>
+          <div class="settings-info-input">
+            <p>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "変更後パスワードを入力(確認用)" %>
+            </p>
+            <% if resource.errors.include?(:password_confirmation) %>
+              <p class="validation-error-message"><%= resource.errors.full_messages_for(:password_confirmation).first %></p>
+            <% end %>
+          </div>
+
+        </div>
+
+        <div class="settings-info-contents d-flex align-items-baseline">
+          <%= f.label :current_password, "現在のパスワード" %>
+          <div class="settings-info-input">
+            <p>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "現在のパスワードを入力" %>
+            </p>
+            <% if resource.errors.include?(:current_password) %>
+              <p class="validation-error-message"><%= resource.errors.full_messages_for(:current_password).first %></p>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="settings-info-contents form-buttons d-flex justify-content-end gap-3">
+          <%= link_to :back do %>
+            <button class="btn cancel-btn">キャンセル</button>
+          <% end %>
+          <%= f.submit "保存", class: "btn confirm-btn settings-confirm-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

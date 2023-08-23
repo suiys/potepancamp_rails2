@@ -1,16 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookingroomsapp</title>
+    <title>宿泊予約アプリ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   </head>
 
   <body>
+    <header>
+      <nav class="navbar Navbar">
+        <div class="container-fluid">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.png", {class: "header-logo", alt: "サイトロゴ"} %>
+          <% end %>
+          <% if user_signed_in? %>
+            <div class="dropdown">
+              <div class="d-flex user-menu">
+                <% if current_user.image.attached? %>
+                  <%= image_tag current_user.image, {class: "user-icon", alt: "ユーザーアイコン"} %>
+                <% else %>
+                  <%= image_tag "default_icon_image.png", {class: "user-icon", alt: "ユーザーアイコン"} %>
+                <% end %>
+                <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" area-expanded="false"><%= current_user.name %></button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                  <li>
+                    <%= link_to "ルームの新規登録", new_room_path, class: "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to "予約済みルーム一覧", reservations_path, class: "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to "登録済みルーム一覧", own_rooms_path, class: "dropdown-item" %>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <%= link_to "アカウント設定", account_path, class: "dropdown-item" %>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          <% else %>
+            <ul class="navbar-nav flex-row ">
+              <li class="header-nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "btn fw-semibold login-btn" %>
+              </li>
+              <li class="header-nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "btn fw-semibold signup-btn" %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <% if notice %>
+      <div class="flash-message">
+        <p class="notice">
+          <%= notice %>
+        </p>
+      </div>
+    <% end %>
     <%= yield %>
+    <footer class="d-flex align-items-center">
+      <div class="container-fluid">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png", {class: "footer-logo", alt: "サイトロゴ"} %>
+        <% end %>
+        <p class="copyright">Copyright &copy; Potepan Share 2023</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,570 @@
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: #222222;
+  background-color: #fff;
+  font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+label, input {
+  font-size: 14px;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+i {
+  vertical-align: middle;
+}
+
+textarea {
+  height: 128px;
+}
+
+th, td {
+  padding: 1rem, 0.5rem;
+  font-size: 14px;
+}
+
+th {
+  white-space: nowrap;
+}
+
+.Navbar {
+  background-color: #000066;
+  height: 80px;
+}
+
+.container-fluid {
+  padding: 0 40px;
+  max-width: 1680px;
+}
+
+.header-logo {
+  width: 240px;
+}
+
+.user-menu {
+  gap: 10px;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.user-menu li {
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.navbar-nav {
+  gap: 18px;
+}
+
+.btn {
+  color: #fff;
+}
+
+.login-btn {
+  border: 1px solid #fff;
+}
+
+.signup-btn, .signin-btn {
+  background-color: #ea5506;
+}
+
+.flash-message {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 40px;
+  background-color: #333;
+  border-radius: 3px;
+  color: azure;
+  box-shadow: 2px 3px 2px rgba(192, 198, 201, 0.3);
+}
+
+.flash-message > p {
+  padding: 10px;
+  margin: auto;
+}
+
+footer {
+  background-color: #000066;
+  height: 180px;
+}
+
+.footer-logo {
+  width: 240px;
+  margin-bottom: 8px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 12px;
+}
+
+.form-wrapper {
+  background-color: #f3f3f3;
+  padding: 100px 0;
+  height: fit-content;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 36px;
+  margin: 0 auto;
+  width: 880px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.required-column::after {
+  content: " *";
+  color: #ec6d71;
+}
+
+.form-control {
+  font-size: 14px;
+}
+
+.form-btn, .confirm-btn {
+  width: 100%;
+  height: 64px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.cancel-btn {
+  color: #333;
+  border: solid 1px #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.sidebar-menu {
+  border: 1px solid #c0c6c9;
+  width: 240px;
+  height: fit-content;
+  margin-right: 1.5rem;
+}
+
+.nav-item {
+  padding: 20px;
+}
+
+.nav-item:first-of-type {
+  border-bottom: 1px solid #c0c6c9;
+}
+
+.sidebar-menu-item {
+  color: #222222;
+}
+
+.selected {
+  color: #ec6d71;
+}
+
+.settings-info {
+  width: 100%;
+}
+
+.settings-info-index {
+  border-bottom: 1px solid #c0c6c9;
+  padding: 0 0.25rem 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.fa-pen-to-square {
+  width: 20px;
+  color: #0e6dfd;
+}
+
+.settings-info-contents {
+  margin-bottom: 1rem;
+  padding: 8px 4px;
+  width: 100%;
+}
+
+.settings-info-contents > label {
+  font-size: 16px;
+  width: 25%;
+}
+
+.settings-info-contents > p {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.edit-profile-image {
+  width: 25%;
+}
+
+.field_with_errors {
+  font-size: 16px;
+  width: 25%;
+}
+
+.settings-info-input {
+  width: 75%;
+}
+
+.settings-info-input > .field_with_errors {
+  width: 100%;
+}
+
+.settings-info-input > p {
+  margin-bottom: 0;
+}
+
+#image > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  object-fit: cover;
+  margin-right: 1.5rem;
+}
+
+#image > p {
+  width: 100%;
+}
+
+.rooms-form-input > label, .users-form-input > label {
+  border: 1px solid #c0c6c9;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 28px;
+  color: #333;
+  height: 32px;
+  width: 240px;
+}
+
+.edit-profile-image-caption {
+  margin-bottom: 0;
+}
+
+.image-upload-field {
+  display: none;
+}
+
+.settings-confirm-btn {
+  width: 100px;
+}
+
+.confirm-btn {
+  background-color: #ea5506;
+}
+
+.cancel-btn {
+  height: 64px;
+  border: 1px solid #c0c6c9;
+}
+
+.label-description {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.rooms-form-contents {
+  margin-bottom: 20px;
+}
+
+.rooms-form-contents > label {
+  margin-bottom: 0;
+  line-height: 35px;
+  font-size: 16px;
+  width: 30%;
+}
+
+.rooms-form-input {
+  width: 65%;
+}
+
+.rooms-form-input > p {
+  margin-bottom: 0;
+}
+
+.room-info-container, .confirm-reservation-form, .reservation-info-container {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.room-image {
+  width: 40%;
+  object-fit: contain;
+  height: fit-content;
+}
+
+.room-info-contents {
+  width: 60%;
+  background-color: #fbd8b586;
+  padding: 40px 20px;
+}
+
+.room-info-index > p {
+  line-height: 40px;
+  margin-bottom: 0;
+}
+
+.room-name {
+  font-size: 28px;
+}
+
+.room-charge {
+  color: #ea5506;
+  font-size: 32px;
+}
+
+.room-address {
+  font-size: 14px;
+}
+
+.own-rooms-list > thead {
+  border-bottom: #333;
+}
+
+.own-rooms-list-image {
+  width: 128px;
+  height: 72px;
+  object-fit: cover;
+}
+
+.no-rooms-caption {
+  color: #333333d9;
+  padding: 24px 8px;
+}
+
+.reservation-form-container {
+  background-color: #fff;
+  padding: 24px 32px;
+}
+
+.reservation-form-contents {
+  width: 32%;
+}
+
+.reservation-form-contents > p {
+  margin-bottom: 0;
+}
+
+.confirm-reservation-form {
+  max-width: 980px;
+}
+
+.total-charge {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.person {
+  border-bottom: 1px solid #c0c6c9;
+}
+
+.reserved-rooms-list > thead {
+  border-bottom: #333;
+}
+
+.firstview {
+  background-image: url(../../assets/images/firstview.jpg);
+  height: 720px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 80px;
+}
+
+.firstview_index {
+  color: #ffffffbe;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.firstview-search-form {
+  background-color: #ffffff9c;
+  padding: 2rem;
+  width: 640px;
+  margin: auto;
+}
+
+.firstview-search-input {
+  height: 64px;
+}
+
+.search-rooms-result-container {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.search-rooms-result-count > span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.search-result-room {
+  width: 31.5%;
+  height: 540px;
+  background-color: #fbd8b586;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+
+.search-result-bottom {
+  position: absolute;
+  bottom: 5%;
+  width: 80%;
+}
+
+.search-result-room > img {
+  width: 100%;
+  height: auto;
+}
+
+.rooms-info {
+  padding: 24px;
+}
+
+.rooms-info > p:first-of-type {
+  font-size: 22px;
+}
+
+.rooms-info > p:nth-of-type(2) {
+  font-size: 14px;
+}
+
+.rooms-details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-align: justify;
+}
+
+.search-result-bottom > .room-charge {
+  font-size: 24px;
+}
+
+.search-rooms-form {
+  background-color: #e0e9ec;
+  height: 144px;
+}
+
+.search-rooms-form > form {
+  width: fit-content;
+}
+
+.search-form-input {
+  position: relative;
+}
+
+.search-form-input > i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translate(0, -37.5%);
+  height: 1.5rem;
+  color: #c0c6c9;
+}
+.search-form-input > input {
+  width: 300px;
+  height: 48px;
+  padding-left: 32px;
+}
+
+.search-btn {
+  background-color: #ea5506;
+  width: 100px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.recommend-area-container {
+  margin-bottom: 50px;
+}
+
+.recommend-areas {
+  gap: 1rem;
+}
+
+.recommend-area {
+  height: 320px;
+  width: 25%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+  border-radius: 12px;
+}
+
+.recommend-rooms-tokyo {
+  background-image: url(../../assets/images/tokyo.jpg);
+}
+
+.recommend-rooms-osaka {
+  background-image: url(../../assets/images/osaka.jpg);
+}
+
+.recommend-rooms-kyoto {
+  background-image: url(../../assets/images/kyoto.jpg);
+}
+
+.recommend-rooms-sapporo {
+  background-image: url(../../assets/images/sapporo.jpg);
+}
+
+.recommend-area-name {
+  color: #000066;
+  line-height: 1.5rem;
+}
+
+.recommend-area-name > p {
+  margin-bottom: 0;
+}
+
+.validation-error-message {
+  font-size: 12px;
+  color: #ec6d71;
+  padding: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .recommend-areas {
+    flex-wrap: wrap;
+  }
+
+  .recommend-area {
+    width: 45%;
+  }
+}

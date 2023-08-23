@@ -1,0 +1,45 @@
+<section class="container room-info-container">
+  <h2>登録済みルーム一覧</h2>
+  <% if @user.rooms != [] %>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle own-rooms-list">
+        <thead>
+          <tr>
+            <th>画像</th>
+            <th>ルーム名</th>
+            <th>紹介文</th>
+            <th>料金/日</th>
+            <th>登録日</th>
+          </tr>
+        </thead>
+        <% @user.rooms.each do |room| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= link_to room_path(room) do %>
+                  <%= render  "shared/room_image", obj: room %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to room_path(room) do %>
+                  <%= room.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= room.introduction %>
+              </td>
+              <td>
+                ¥<%= room.room_charge.to_s(:delimited) %>~
+              </td>
+              <td>
+                <%= room.created_at.to_s(:datetime_jp) %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+    </div>
+  <% else %>
+    <p class="no-rooms-caption">まだ登録したルームはありません</p>
+  <% end %>
+</section>
