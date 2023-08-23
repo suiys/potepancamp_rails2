@@ -4,6 +4,7 @@ class Reservation < ApplicationRecord
     validates :check_out
     validates :person
   end
+  validates :person, numericality: {only_integer: true, greater_than: 0}
   validate :checkout_must_be_after_checkin
 
   belongs_to :user

@@ -5,6 +5,7 @@ class Room < ApplicationRecord
     validates :room_charge
     validates :address
   end
+  validates :room_charge, numericality: {only_integer: true, greater_than: 0}
 
   has_one_attached :image
 
